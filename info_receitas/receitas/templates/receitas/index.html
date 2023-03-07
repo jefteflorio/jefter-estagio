@@ -1,0 +1,12 @@
+<h1>Receitas</h1>
+{% if receitas %}
+    <ul>
+    {% for receita in receitas %}
+    <li><a href="{% url 'receitas:editar_receita' receita.id %}">{{ receita.nome_receita }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma receita cadastrada.</p>
+{% endif %}
+
+<button onclick="location.href='{% url 'receitas:criar_receita' %}'">Criar receita</button>

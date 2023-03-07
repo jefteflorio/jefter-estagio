@@ -1,0 +1,14 @@
+<form action="{% url 'receitas:atualizar_receita' receita.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Receita: {{ receita.nome_receita }}</h1></legend>
+        <legend><h1>Ingredientes:</h1></legend>    
+        <textarea id="ingredientes" name="ingredientes" 
+            rows="5" cols="33">
+            {{ receita.ingredientes }}
+        </textarea>
+    </fieldset>
+    <input type="submit" value="Editar">
+</form>
+
+<button onclick="location.href='{% url 'receitas:deletar_receita' receita.id %}'">Deletar receita</button>

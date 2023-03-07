@@ -1,0 +1,12 @@
+<form action="{% url 'receitas:gravar_receita' %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <legend><h1>Digite o nome da receita:</h1></legend>
+            <input type="text" name="nome_receita" id="nome_receita">
+        <legend><h1>Digite os ingredientes:</h1></legend>    
+        <textarea id="ingredientes" name="ingredientes"
+            rows="5" cols="33">
+        </textarea>
+    </fieldset>
+    <input type="submit" value="Gravar">
+</form>
